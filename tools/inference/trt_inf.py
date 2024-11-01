@@ -16,6 +16,8 @@ import torchvision.transforms as T
 
 import tensorrt as trt
 
+Image.MAX_IMAGE_PIXELS = None   # disables the warning
+
 
 class TimeProfiler(contextlib.ContextDecorator):
     def __init__(self, ):

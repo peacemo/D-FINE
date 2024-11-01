@@ -8,6 +8,8 @@ from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
 import argparse
 
+Image.MAX_IMAGE_PIXELS = None   # disables the warning
+
 
 def resize_image_and_update_annotations(image_path, annotations, max_size=640):
     print(f"Processing image: {image_path}")

@@ -21,6 +21,8 @@ from ._dataset import DetDataset
 from .._misc import convert_to_tv_tensor
 from ...core import register
 
+Image.MAX_IMAGE_PIXELS = None   # disables the warning
+
 @register()
 class VOCDetection(torchvision.datasets.VOCDetection, DetDataset):
     __inject__ = ['transforms', ]

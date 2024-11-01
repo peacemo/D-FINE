@@ -8,6 +8,8 @@ import onnx
 import torch 
 import onnx_graphsurgeon
 
+Image.MAX_IMAGE_PIXELS = None   # disables the warning
+
 
 def to_binary_data(path, size=(640, 640), output_name='input_tensor.bin'):
     '''--loadInputs='image:input_tensor.bin'

@@ -15,6 +15,8 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from src.core import YAMLConfig
 
+Image.MAX_IMAGE_PIXELS = None   # disables the warning
+
 
 def draw(images, labels, boxes, scores, thrh = 0.6):
     for i, im in enumerate(images):

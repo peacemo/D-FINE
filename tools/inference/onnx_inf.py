@@ -10,6 +10,8 @@ import numpy as np
 import onnxruntime as ort 
 from PIL import Image, ImageDraw
 
+Image.MAX_IMAGE_PIXELS = None   # disables the warning
+
 
 def draw(images, labels, boxes, scores, thrh = 0.6):
     for i, im in enumerate(images):
