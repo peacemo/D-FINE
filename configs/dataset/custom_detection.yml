@@ -4,15 +4,15 @@ evaluator:
   type: CocoEvaluator
   iou_types: ['bbox', ]
 
-num_classes: 777 # your dataset classes
+num_classes: 5 # your dataset classes
 remap_mscoco_category: False
 
 train_dataloader: 
   type: DataLoader
   dataset: 
     type: CocoDetection
-    img_folder: /data/yourdataset/train
-    ann_file: /data/yourdataset/train/train.json
+    img_folder: D:/chenxueqiang/data/PVS_coco/train2017
+    ann_file: D:/chenxueqiang/data/PVS_coco/annotations/instances_train2017.json
     return_masks: False
     transforms:
       type: Compose
@@ -28,8 +28,8 @@ val_dataloader:
   type: DataLoader
   dataset: 
     type: CocoDetection
-    img_folder: /data/yourdataset/val
-    ann_file: /data/yourdataset/val/val.json
+    img_folder: D:/chenxueqiang/data/PVS_coco/val2017
+    ann_file: D:/chenxueqiang/data/PVS_coco/annotations/instances_val2017.json
     return_masks: False
     transforms:
       type: Compose
