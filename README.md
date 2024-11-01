@@ -1,6 +1,6 @@
 <!--# [D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement](https://arxiv.org/abs/xxxxxx) -->
 
-English | [简体中文](README_cn.md) | [English Blog](src/zoo/dfine/blog.md) | [中文博客](src/zoo/dfine/blog_cn.md)
+English | [简体中文](README_cn.md) | [日本語](README_ja.md) | [English Blog](src/zoo/dfine/blog.md) | [中文博客](src/zoo/dfine/blog_cn.md)
 
 <h2 align="center">
   D-FINE: Redefine Regression Task of DETRs as Fine&#8209;grained&nbsp;Distribution&nbsp;Refinement
@@ -532,7 +532,7 @@ trtexec --onnx="model.onnx" --saveEngine="model.engine" --fp16
 </details>
 
 <details>
-<summary> Inference </summary>
+<summary> Inference (Visualization) </summary>
 
 
 1. Setup
@@ -544,10 +544,12 @@ export model=l  # s m l x
 
 <!-- <summary>5. Inference </summary> -->
 2. Inference (onnxruntime / tensorrt / torch)
+   
+Inference on images and videos is now supported.
 ```shell
-python tools/inference/onnx_inf.py --onnx-file model.onnx --im-file image.jpg
-python tools/inference/trt_inf.py --trt-file model.trt --im-file image.jpg
-python tools/inference/torch_inf.py -c configs/dfine/dfine_hgnetv2_${model}_coco.yml -r model.pth --im-file image.jpg --device cuda:0
+python tools/inference/onnx_inf.py --onnx model.onnx --input image.jpg  # video.mp4
+python tools/inference/trt_inf.py --trt model.trt --input image.jpg
+python tools/inference/torch_inf.py -c configs/dfine/dfine_hgnetv2_${model}_coco.yml -r model.pth --input image.jpg --device cuda:0
 ```
 </details>
 
